@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Maps</title>
+    <style>
+        .map-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 200px;
+            margin: auto;
+            padding-top: 50px;
+        }
+        .map-buttons button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="map-buttons">
+    <button onclick="openAppleMaps()">Apple Maps</button>
+    <button onclick="openGoogleMaps()">Google Maps</button>
+    <button onclick="openWaze()">Waze</button>
+</div>
+
+<script>
+  const map_x = 34.0522; // Широта конечной точки
+  const map_y = -118.2437; // Долгота конечной точки
+
+  function openAppleMaps() {
+    const url = `http://maps.apple.com/?daddr=${map_x},${map_y}`;
+    window.open(url, '_blank');
+  }
+
+  function openGoogleMaps() {
+    const url = `https://www.google.com/maps/dir/?api=1&destination=${map_x},${map_y}`;
+    window.open(url, '_blank');
+  }
+
+  function openWaze() {
+    const url = `https://www.waze.com/ul?ll=${map_x},${map_y}&navigate=yes`;
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
